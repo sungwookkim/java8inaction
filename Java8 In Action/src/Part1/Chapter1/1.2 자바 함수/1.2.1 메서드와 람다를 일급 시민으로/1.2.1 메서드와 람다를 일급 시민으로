@@ -1,0 +1,18 @@
+1. 메서드 레퍼런스
+	File[] hiddenFiles = new File(".").listFiles(new FileFilter() {
+		
+		@Override
+		public boolean accept(File file) {
+			return file.isHidden(); // 숨겨진 파일 필터링
+		}
+	});
+	위 코드는 파일이 숨겨져 있는지 여부를 알려주는 코드이다.
+	해당 코드를
+		File[] hiddenFiles = new File(".").listFiles(File::isHidden);
+	와 같이 메서드 레퍼런스를 이용하면 메서드를 이급값이 아닌 일급값으로 처리 할 수 있다.
+
+2. 메서드 레퍼런스는 ::(이 메서드를 값으로 사용하라는 의미)를 사용.
+
+첨부
+	listFiles메서드의 매개변수인 FileFilter는 추상 인터페이스이다.
+	FileFilter 인터페이스에서 accept 메서드를 설정하였기 때문에 필수 구현 메서드이다.
