@@ -31,7 +31,7 @@ public class Main_2_1 {
 	
 	/*
 	 * 2.1.2 두 번재 시도 : 색을 파라미터화
-	 * 그런데 우리의 갑님께서의 변심으로 녹색 사과 말고 빨간 사과도 필터링하고 싶어졌다 하셨다.
+	 * 그런데 우리의 갑님께서의 변심으로 녹색 사과 말고 빨간 사과도 필터링하고 싶어 하셨다.
 	 * 다양항 색의 사과 필터링을 위해 아래와 같이 메서드를 만들었다.
 	 */
 	public static List<AppleEntity> filterAppleByColor(List<AppleEntity> inventory, String color) {

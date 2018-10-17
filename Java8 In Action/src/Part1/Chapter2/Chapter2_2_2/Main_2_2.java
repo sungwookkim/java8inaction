@@ -15,7 +15,7 @@ import Part1.Chapter2.Chapter2_2_2.filters.inter.ApplePredicate;
  * 전체을 보면 우리의 선택 조건은 
  * 		사과의 어떤 속성에 기초해서 불린값을 반환(예를 들어 사과가 녹색인가? 150그램 이상인가?)하는 방법
  * 을 결정 할 수 있다.
- * 이와 같은 동작을 프레디케이스라고 한다.
+ * 이와 같은 동작을 프레디케이트라고 한다.
  * 
  * 먼저 선택 조건을 결정하는 인터페이스를 만들자.
  * (Part1.Chapter2.Chapter2_2_2.filters.inter.ApplePredicate)
@@ -37,7 +37,7 @@ import Part1.Chapter2.Chapter2_2_2.filters.inter.ApplePredicate;
 public class Main_2_2 {
 
 	/*
-	 * 2.2.1 추상적 조건으로 필터링
+	 * 2.2.1 네 번째 시도 : 추상적 조건으로 필터링(이 정도면 갑님한테 돈을 더 요구 할수도 있을거 같다..)
 	 */
 	public static List<AppleEntity> filterApples(List<AppleEntity> inventory, ApplePredicate p) {
 		List<AppleEntity> result = new ArrayList<>();
