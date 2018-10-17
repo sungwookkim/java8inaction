@@ -4,7 +4,7 @@
 	filterApples(inventory, (Apple a) -> a.getWeight() > 150);
 와 같이 구현 할 수 있으면 여기서 살짝 응용을 하자면
 	filterApples(inventory, (Apple a) -> a.getWeight() < 80 || 
-										"brown".equals(a.getColor()) );
+		"brown".equals(a.getColor()) );
 처럼 구현 할 수 있다.
 
 2. 하지만 람다가 몇 줄 이상으로 길어진다면(즉, 복잡한 동작을 수행하는 상황) 익명 람다보다는 코드가 수행하는 일을
