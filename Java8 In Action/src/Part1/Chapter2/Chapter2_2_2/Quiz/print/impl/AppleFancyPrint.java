@@ -14,7 +14,7 @@ public class AppleFancyPrint implements ApplePrintPredicate {
 	public String print(AppleEntity apple) {
 		String printStr = apple.getWeight() > checkWeight ? "heavy" : "light";
 		
-		return "[Check Weight =" + this.checkWeight + ", Apple Weight = " + apple.getWeight() + "] " 
+		return "[Check Weight = " + this.checkWeight + ", Apple Weight = " + apple.getWeight() + "] " 
 				+ "A " + printStr + " " + apple.getColor() + " apple";
 	}
 

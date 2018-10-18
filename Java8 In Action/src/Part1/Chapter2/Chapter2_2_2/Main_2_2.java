@@ -57,6 +57,7 @@ public class Main_2_2 {
 		
 		return result;
 	}
+	
 	public static void main(String[] args) {
 		List<AppleEntity> inventory = Arrays.asList(new AppleEntity("green", 100)
 				, new AppleEntity("red", 120)
@@ -69,10 +70,10 @@ public class Main_2_2 {
 		 * 한다는 점에서 소프트웨어 엔지니어링적으로 큰 이득을 얻는다.
 		 */
 		filterApples(inventory, new AppleHeavyColorPredicate()).stream()
-			.forEach((apple) -> System.out.println("[AppleHeavyColorPredicate] color : " + apple.getColor() + ", weight : " + apple.getWeight()) );
+			.forEach((AppleEntity apple) -> System.out.println("[AppleHeavyColorPredicate] color : " + apple.getColor() + ", weight : " + apple.getWeight()) );
 
 		filterApples(inventory, new AppleHeavyWeightPredicate()).stream()
-			.forEach((apple) -> System.out.println("[AppleHeavyWeightPredicate] color : " + apple.getColor() + ", weight : " + apple.getWeight()) );
+			.forEach((AppleEntity apple) -> System.out.println("[AppleHeavyWeightPredicate] color : " + apple.getColor() + ", weight : " + apple.getWeight()) );
 	}
 
 }
