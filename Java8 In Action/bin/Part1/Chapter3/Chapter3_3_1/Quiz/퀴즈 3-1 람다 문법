@@ -1,0 +1,25 @@
+퀴즈 3-1 람다 문법
+
+람다 규칙에 맞지 않는 람다 표현식을 고르시오.
+1. () -> {}
+2. () -> "Raoul"
+3. () -> {return "Mario";}
+4. (Integer i) -> return "Alan" + i;
+5. (String s) -> {"Iron Man!!";}
+
+정답은(친절하게 그냥 알랴줌) 4, 5번이 유효하지 않다.
+풀이
+	1. 파라미터가 없으면 void를 반환하는 람다 표현식이다. 
+	이는 public void run() {} 처럼 바디가 없는 메서드와 같다.
+	
+	2. 파라미터가 없으며 문자열을 반환하는 표현식이다.
+	
+	3. 파라미터가 없으며 문자열을 반환하는(명시적 return 문 사용) 표현식이다.
+	
+	4. return 문은 흐름 제어문이다. (Integer i) -> { return "Alan" + i; }처럼 되어야
+	올바른 람다 표현식이다.
+	
+	5. "Iron Man!!"은 구문(stratement)이 아니라 표현식(expression)이다.
+	(String s) -> "Iron Man!!";(중괄호 없음)처럼 되어야 올바른 표현식이다.
+	또는 (String s) -> { return "Iron Man!!"; }처럼 명시적으로 return 문을 사용해야 한다.
+	
