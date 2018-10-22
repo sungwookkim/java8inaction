@@ -117,7 +117,7 @@ public class Main_3_4 {
 		 * 자바 8에서는 기본형을 입출력으로 사용하는 상황에서 오토박싱 동작을 피할 수 있도록
 		 * 특별한 함수형 인터페이스를 제공한다.
 		 * 
-		 * 아래 예제는 IntPredicate는 1000이라는 값을 방식하지 않지만, Predicate<Integer> 중 인수가 1000인 값은
+		 * 아래 예제는 IntPredicate는 1000이라는 값을 박싱하지 않지만, Predicate<Integer> 중 인수가 1000인 값은
 		 * Integer 객체로 박싱한다. 
 		 */
 		IntPredicate evenNumbers = (int i) -> i % 2 == 0;
