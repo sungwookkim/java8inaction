@@ -1,0 +1,38 @@
+퀴즈 3-3 어디에 람다를 사용할 수 있는가
+
+다음 중 람다 표현식을 올바로 사용한 코드는?
+
+1. 
+	excute(() -> {});
+	public void excute(Runnable r) {
+		r.run();
+	}
+	
+2. 
+	public interface Callable<V> {
+ 		V call();
+	} 	
+	public Callable<String> fetch() {
+		return () -> "Tricky example ;-";
+	}
+	
+3.
+	public interface Predicate<T> {
+		boolean test(T t);
+	}	
+	Predicate<AppleEntity> p = (AppleEntity apple) -> apple.getWeight(); 
+
+
+정답은 1, 2번이 유효한 람다 표현식이다.
+
+1번은 () -> {}의 시그너처는 () -> void며 Runnable의 추상 메서드의 run의 시그너처와 일치한다.
+
+2번은 fetch 메서드의 반환 형식은 Callable<String>이다. V를 String으로 대치했을 때 Callable<String> 메서드의
+시그너처는 () -> String이 된다. () -> "Tricky example ;-"는 () ->  String 시그너처이므로 유요한 람다 표현식이다.
+
+3번 (AppleEntity apple) -> apple.getWeight() 시그너처는 (apple) -> Integer이므로 Predicate<T>의 test 메서드 시그너처와 일치 않지 않아
+유효하지 않는 람다 표현식이다.
+(3번 코드 기준으로 설명 하자면 test 메서드 시그너처는 (apple) -> boolean이다. )  
+
+
+
