@@ -45,12 +45,12 @@ public class Main_3_5 {
 		 * 
 		 * 위 람다 표현식을 사용할 때 다음과 같은 순서로 형식 확인 과정이 진행된다.
 		 * 1. filter 메서드의 선언을 확인.
-		 * 2. filter 메서드는 두 번째 파라미터로 Predicate<Apple> 형식(대상 형식)을 기대한다.
-		 * 3. Predicate<Apple>은 test라는 한 개의 추상 메서드를 정의하는 함수형 인터페이스이다.
-		 * 4. test 메서드는 Apple을 받아 boolean을 반환하는 함수 디스크립터를 묘사한다.
+		 * 2. filter 메서드는 두 번째 파라미터로 Predicate<AppleEntity> 형식(대상 형식)을 기대한다.
+		 * 3. Predicate<AppleEntity>은 test라는 한 개의 추상 메서드를 정의하는 함수형 인터페이스이다.
+		 * 4. test 메서드는 AppleEntity을 받아 boolean을 반환하는 함수 디스크립터를 묘사한다.
 		 * 5. filter 메서드로 전달된 인수는 이와 같은 요구사항을 만족해야 한다.
 		 * 
-		 * 위 예제에서 람다 표현식은 Apple을 인수로 받아 boolean을 반환하므로 유효한 코드이다.
+		 * 위 예제에서 람다 표현식은 AppleEntity을 인수로 받아 boolean을 반환하므로 유효한 코드이다.
 		 * 람다 표현식이 예외를 던질 수 있다면 추상 메서드도 같은 예외를 던질 수 있도록 throws로 선언해야 한다.
 		 * 
 		 * 람다 표현식의 형식 검사 과정의 재구성
