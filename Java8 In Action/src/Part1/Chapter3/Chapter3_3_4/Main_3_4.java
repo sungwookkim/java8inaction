@@ -50,7 +50,7 @@ public class Main_3_4 {
 	/*
 	 * 3.4.3 Function
 	 * 
-	 * java.util.function.Function<T, R>인터페이스는 제네릭 형식 T를 인수로 받아서 제네릭 형식 R 객체를 반환하는 apply라는 추상 메서드를 정의한다.
+	 * java.util.function.Function<T, R>인터페이스는 제네릭 형식 T를 인수로 받아서 제네릭 형식 R 객체를 반환하는 Apple라는 추상 메서드를 정의한다.
 	 * 입력을 출력으로 매핑하는 람다를 정의할 때 Function 인터페이스를 활용할 수 있다.
 	 * 
 	 * 아래 예제는 String 리스트를 인수로 받아 각 String의 길이를 포함하는 Intger 리스트로 반환하는 예 이다.
@@ -187,11 +187,11 @@ public class Main_3_4 {
 		 * 			람다 예제 : (List<String> list) -> list.isEmpty()
 		 * 			대응하는 함수형 인터페이스 : Predicate<List<String>>
 		 * 		객체 생성
-		 * 			람다 예제 : () -> new ApplyEntity(10)
-		 * 			대응하는 함수형 인터페이스 : Supplier<ApplyEntity>
+		 * 			람다 예제 : () -> new AppleEntity(10)
+		 * 			대응하는 함수형 인터페이스 : Supplier<AppleEntity>
 		 * 		객체에서 소비
-		 * 			람다 예제 : (ApplyEntity appleEntity) -> System.out.println(a.getWeight())
-		 * 			대응하는 함수형 인터페이스 : Consumer<ApplyEntity>
+		 * 			람다 예제 : (AppleEntity appleEntity) -> System.out.println(a.getWeight())
+		 * 			대응하는 함수형 인터페이스 : Consumer<AppleEntity>
 		 * 		객체에서 선택/추출
 		 * 			람다 예제 : (String s) -> s.length()
 		 * 			대응하는 함수형 인터페이스 : Function<String, Integer> 또는 ToIntFunction<String>
@@ -199,10 +199,10 @@ public class Main_3_4 {
 		 * 			람다 예제 : (int a, int b) -> a * b
 		 * 			대응하는 함수형 인터페이스 : IntBinaryOperator
 		 * 		두 객체 비교
-		 * 			람다 예제 : (ApplyEntity a1, ApplyEntity a2) -> a1.getWeight().compareTo(a2.getWeight())
-		 * 			대응하는 함수형 인터페이스 : Comparator<ApplyEntity> 또는 
-		 * 				BiFunction<ApplyEntity, ApplyEntity, Integer> 또는
-		 * 				ToIntBiFunction<ApplyEntity, ApplyEntity>
+		 * 			람다 예제 : (AppleEntity a1, AppleEntity a2) -> a1.getWeight().compareTo(a2.getWeight())
+		 * 			대응하는 함수형 인터페이스 : Comparator<AppleEntity> 또는 
+		 * 				BiFunction<AppleEntity, AppleEntity, Integer> 또는
+		 * 				ToIntBiFunction<AppleEntity, AppleEntity>
 		 */
 		
 	}

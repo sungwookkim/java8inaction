@@ -1,0 +1,9 @@
+퀴즈 3-5 형식 검사 문제. 다음 코드를 컴파일할 수 없는 이유는?
+
+코드의 문제를 해결하시오.
+	Object o = () -> { System.out.println("Tricky example!"); }
+
+정답
+람다 표현식의 컨텍스트는 Object(대상 형식)다. 하지만 Object는 함수형 인터페이스가 아니다.
+따라서 () -> void 형태의 함수 디스크립터를 갖는 Runnable로 대상 형식을 바꿔야 한다.
+	Runnable r = () -> { System.out.println("Tricky example!") };
