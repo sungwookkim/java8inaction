@@ -27,7 +27,7 @@ import Part1.Chapter3.Chapter3_3_6.entity.OrangeEntity;
  * 실제로 메서드 레퍼런스를 이용하면 기존에 구현된 메서드를 람다 표현식을 만들수 있다.
  * 이때 명시적으로 메서드명을 참조함으로써 가독성을 높일수 있다.
  * 메서드 레퍼런스는 메서드명 앞에 구분자(::)를 붙이는 방식으로 메서드 레퍼런스를 활용할 수 있다.
- * 
+ *  
  * 람다와 메서드 레퍼런스 단축 표현 예제
  * 람다 : (AppleEntity a) -> a.getWeight()
  * 메서드 레퍼런스 단축 표현 : AppleEntity::getWeight
