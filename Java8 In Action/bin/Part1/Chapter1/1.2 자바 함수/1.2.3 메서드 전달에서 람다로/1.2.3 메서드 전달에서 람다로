@@ -1,0 +1,12 @@
+1. 예제는 "1.2.2 코드 넘겨주기(예제)"을 응용하였다.
+앞 전에 메서드 레퍼런스을 익명함수 또는 람다로 구현하게 되면
+	filterApples(inventory, (Apple a) -> "green".equals(a.getColor()) );
+	filterApples(inventory, (Apple a) -> a.getWeight() > 150);
+와 같이 구현 할 수 있으면 여기서 살짝 응용을 하자면
+	filterApples(inventory, (Apple a) -> a.getWeight() < 80 || 
+		"brown".equals(a.getColor()) );
+처럼 구현 할 수 있다.
+
+2. 하지만 람다가 몇 줄 이상으로 길어진다면(즉, 복잡한 동작을 수행하는 상황) 익명 람다보다는 코드가 수행하는 일을
+잘 설명하는 이름을 가진 메서드를 정의하고 메서드 레퍼런스를 활용하는 것이 바람직하다.
+코드의 명확성이 우선시 되어야 한다.
