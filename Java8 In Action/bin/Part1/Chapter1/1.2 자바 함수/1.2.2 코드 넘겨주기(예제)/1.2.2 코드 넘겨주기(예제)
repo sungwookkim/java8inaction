@@ -1,0 +1,69 @@
+1.
+	public static List<Apple> filterGreenApples(List<Apple> inventory) {
+		/*
+			new 연산자 부분에 타입을 작성하지 않았는데 
+			작성하지 않아도 왼쪽에 있는 타입 선언부에 있는 타입을 토대로 타입이 지정된다.
+			이를 타입 추론이라고 한다.
+		*/ 
+		List<Apple> result = new ArrayList<>;
+		
+		for(Apple apple : inventory) {
+			if("green".equals(apple.getColor()) ) {
+				result.add(apple);
+			}
+		}
+		
+		return result;
+	}
+	위 코드는 녹색 사과만 필터링 하는 코드이다. 만약 여기서 무게를 필터링 하고 싶다고 한다면
+	흔히 생각 혹은 하는 방법이 복사&붙혀넣기 방식으로
+	
+	public static List<Apple> filterHeavyApples(List<Apple> inventory) {	
+		List<Apple> result = new ArrayList<>;
+		
+		for(Apple apple : inventory) {
+			if(apple.getWeight() > 150) {
+				result.add(apple);
+			}
+		}
+		
+		return result;
+	}
+	와 같이 별도의 메소드를 작성할 것이다. 그러나 여기서 달라지는 부분은 핵심 로직(녹색 사과 필터링 로직, 무게 필터링 로직)
+	을 제외한 나머지 코드는 동일한 코드이다.
+	
+	위 코드를  자바 8에 맞춰 구현 한다면
+	public static boolean isGreenApple(Apple apple) {
+		return "green".equals(apple.getColor());
+	}
+	
+	public static boolean isHeavyApple(Apple apple) {
+		return apple.getWeight() > 150;
+	}
+	
+	public interface Predicate<T> {
+		boolean test(T t);
+	}
+	
+	public static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> p) {	
+		List<Apple> result = new ArrayList<>;
+		
+		for(Apple apple : inventory) {
+			if(p.test(apple)) {
+				result.add(apple);
+			}
+		}
+		
+		return result;
+	} 
+	와 같은 형태로 구현 할 수 있다.(여기서 Predicate에 관련된 사항은 넘어간다고 적혀있었음.) 
+	사용 방법은
+		filterApples(inventory, Apple::isGreenApple);
+		filterApples(inventory, Apple::isHeavyApple);
+		
+부록
+	Predicate(프레디케이트)?
+	Apple::isGreenApple 메서드를(Predicate<Apple> 파라미터를 인수로 받는) filterApples로 넘겨주었다.
+	수학에서는 인수로 값을 받아 true나 false를 반환하는 함수를 프레디케이스(predicate)라고 한다.
+	자바 8에서도 Function<Apple, Boolean>같이 구현 할 수 있지만 Predicate<Apple>을 사용하는 것이 더 표준적인 방식이다.
+	(또한 boolean을 Boolean으로 변환하는 과정이 없으므로 더 효율적이기도 하다.)	
