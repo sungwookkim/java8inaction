@@ -1,0 +1,15 @@
+퀴즈 4-1 중간 연산과 최종 연산
+
+다음 스트림 파이프라인에서 중간 연산과 최종 연산을 구별하시오.
+
+long count = menu.stream()
+				.filter(d -> d.getCalories() > 300)
+				.distinct()
+				.limit(3)
+				.count();
+
+정답
+스트림 파이프라인의 마지막 연산 count는 스트림이 아닌 long을 반환한다.
+따라서 count는 최종 연산이다.
+filter, distinct, limit는 스트림을 반환하며 서로 연결할 수 있다.
+따라서 이들은 중간 연산이다.
