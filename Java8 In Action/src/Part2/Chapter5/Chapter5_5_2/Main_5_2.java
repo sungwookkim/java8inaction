@@ -17,15 +17,15 @@ public class Main_5_2 {
 
 	public static void main(String[] args) {
 		List<Dish> menu = Arrays.asList(
-				new Dish("pork", false, 800, Dish.Type.MEAT)	
-				, new Dish("beef", false, 700, Dish.Type.MEAT)				
-				, new Dish("chicken", false, 400, Dish.Type.MEAT)
-				, new Dish("french fries", true, 530, Dish.Type.OTHER)
-				, new Dish("rice", true, 350, Dish.Type.OTHER)
-				, new Dish("season fruit", true, 120, Dish.Type.OTHER)
-				, new Dish("pizza", true, 550, Dish.Type.OTHER)
-				, new Dish("prawns", false, 300, Dish.Type.FISH)
-				, new Dish("salmon", false, 450, Dish.Type.FISH));
+			new Dish("pork", false, 800, Dish.Type.MEAT)	
+			, new Dish("beef", false, 700, Dish.Type.MEAT)				
+			, new Dish("chicken", false, 400, Dish.Type.MEAT)
+			, new Dish("french fries", true, 530, Dish.Type.OTHER)
+			, new Dish("rice", true, 350, Dish.Type.OTHER)
+			, new Dish("season fruit", true, 120, Dish.Type.OTHER)
+			, new Dish("pizza", true, 550, Dish.Type.OTHER)
+			, new Dish("prawns", false, 300, Dish.Type.FISH)
+			, new Dish("salmon", false, 450, Dish.Type.FISH));
 		
 		/*
 		 * 5.2.1 스트림의 각 요소에 함수 적용하기
@@ -87,7 +87,7 @@ public class Main_5_2 {
 			});
 		
 		/*
-		 * 위 상황의 해결하기 위해서는 flatMap메서드를 사용하면 된다. 
+		 * 위 상황을 해결하기 위해서는 flatMap메서드를 사용하면 된다. 
 		 * flatMap은 각 배열을 스트림이 아니라 스트림의 콘텐츠로 매핑한다.
 		 * 즉, map(Arrays::stream)과 달리 flatMap은 하나의 평면화된 스트림을 반환한다.
 		 * 
@@ -99,7 +99,7 @@ public class Main_5_2 {
 			.map(word -> word.split(""))
 			/*
 			 * flatMap을 이용해서 하나의 평면화된 스트림을 반환한다.
-			 * 즉 Stream<String[]> 스트림이 반환된다.
+			 * 즉 Stream<String> 스트림이 반환된다.
 			 */
 			.flatMap(Arrays::stream)
 			.distinct()

@@ -10,8 +10,7 @@ import Part2.Chapter5.Chapter5_5_1.entity.Dish;
  * 5.3 검색과 매칭
  * 
  * 특정 속성이 데이터 집하에 있는지 여부를 검색하는 데이터 처리도 자주 사용된다.
- * 스트림 API는 allMatch, anyMatch, noneMatch, findFirst, findAny 등 다양한 유틸리티 메서드를
- * 제공한다.
+ * 스트림 API는 allMatch, anyMatch, noneMatch, findFirst, findAny 등 다양한 유틸리티 메서드를 제공한다.
  */
 public class Main_5_3 {
 
@@ -96,11 +95,11 @@ public class Main_5_3 {
 		 * Optional<T>클래스(java.util.Optional)는 값의 존재나 부재 여부를 표현하는 컨테이너 클래스다.
 		 * 이전 예제에서 findAny 메서드는 아무 요소도 반환하지 않을 수 있다.
 		 * null은 쉽게 에러를 일으킬 수 있으므로 자바 8 라이브러리 설계자는 Optional<T>라는 기능을 만들었다.
-		 * 		- isPresend()는 Optional이 값을 포함하면 참(true)을 반환하고, 값을 포함하지 않으면
+		 *		- isPresend()는 Optional이 값을 포함하면 참(true)을 반환하고, 값을 포함하지 않으면
 		 * 		거짓(false)을 반환한다.
 		 * 
 		 *  	- ifPresend(Consumer<T> block)은 값이 있으면 주어진 블럭을 실행한다.
-		 *  	Consumer 함수형 인터페이스에넌 T형식의 인수를 받으며 void를 반환하는 람다를 전달할 수 있다.
+		 *  	Consumer 함수형 인터페이스에선 T형식의 인수를 받으며 void를 반환하는 람다를 전달할 수 있다.
 		 *  
 		 *  	- T get()은 값이 존재하면 값을 반환하고, 값이 없으면 NoSuchElementException을 일으킨다.
 		 *  
