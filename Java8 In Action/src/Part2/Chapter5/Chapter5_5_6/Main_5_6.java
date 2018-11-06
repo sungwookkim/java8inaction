@@ -2,6 +2,7 @@ package Part2.Chapter5.Chapter5_5_6;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.OptionalInt;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -70,6 +71,35 @@ public class Main_5_6 {
 		Stream<Integer> streamInteger = menu.stream().mapToInt(Dish::getCalories).boxed();
 		System.out.println("[Stream<Integer>] 객체 스트림으로 복원하기 : " + streamInteger);
 		
+		/*
+		 * 기본값 : OptionalInt
+		 * 
+		 * 합계 예제에서는 0이라는 기본값이 있어 별 문제가 없었다.
+		 * 하지만 IntStream에서 최대값을 찾을 때는 0이라는 기본값 때문에 잘못된 결과가 도출될 수 있다.
+		 * 스트림에 요소가 없는 상황과 실제 최대값이 0인 상황을 어떻게 구별할 수 있을까?
+		 * Optional을 Integer, String 등의 레퍼런스 형식으로 파라미터화할 수 있다.
+		 * 또한 OptionalInt, OptionalDouble, OptionalLong 세 가지 기본형 특화 스트림 버전도 제공한다. 
+		 */
+		OptionalInt optionalInt = menu.stream().mapToInt(Dish::getCalories).max();
+		// 최대 값이 없는 상황에 orElse 메서드를 이용해서 명시적으로 기본값을 정의 할 수 있다.
+		System.out.println("기본값 : OptionalInt : " + optionalInt.orElse(1));
+		
+		/*
+		 * 5.6.2 숫자 스트림 활용 : 피타고라스 수
+		 */
+		Stream<int[]> pythagoreanTriples = IntStream.rangeClosed(1, 100)
+			.boxed()
+			.flatMap(a -> {
+				return IntStream.rangeClosed(a, 100)
+					.filter(b -> Math.sqrt(a * a + b * b) % 1 == 0)
+					.mapToObj(b -> new int[] {a, b, (int)Math.sqrt(a * a + b *b) })
+					.filter(t -> t[2] % 1 == 0);
+			});
+
+		System.out.println("5.6.2 숫자 스트림 활용 : 피타고라스 수");
+		pythagoreanTriples
+			.limit(5)
+			.forEach(t -> System.out.println(t[0] + ", " + t[1] + ", " + t[2]));
 	}
 
 }

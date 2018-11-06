@@ -32,8 +32,8 @@ import Part1.Chapter3.Chapter3_3_3.buffer.inter.BufferedReaderProcessor;
  * 
  * 와 같은 형식의 코드를 실행 어라운드 패턴(execute around pattern)이라고 한다.
  */
-public class Main_3_3 {	
-	public static FileReader getExmpFile() throws FileNotFoundException, UnsupportedEncodingException {
+public class Main_3_3 {
+	public static FileReader getExmpFile() throws FileNotFoundException, UnsupportedEncodingException {		
 		return new FileReader(URLDecoder.decode(Main_3_3.class.getResource("").getPath() + "Main_3_3.txt", "UTF-8"));
 	}
 
