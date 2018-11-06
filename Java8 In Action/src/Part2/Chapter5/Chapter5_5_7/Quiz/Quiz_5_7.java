@@ -13,8 +13,6 @@ public class Quiz_5_7 {
 			.limit(20)
 			.map(t -> t[0])
 			.forEach(t -> System.out.print(t + ", ")); 
-
-
 	}
 
 }

@@ -85,7 +85,22 @@ public class Main_5_6 {
 		System.out.println("기본값 : OptionalInt : " + optionalInt.orElse(1));
 		
 		/*
-		 * 5.6.2 숫자 스트림 활용 : 피타고라스 수
+		 * 5.6.2 숫자 범위
+		 * 
+		 * 특정 범위의 숫자를 이용해야 하는 상황이 자주 발생한다.
+		 * 예를 들어 1부터 100사이의 숫자를 생성하려한다고 가정하자.
+		 * 자바 8의 IntStream, LongStream에서는 range와 rangeClosed라는 두 가지 정적 메서드를 제공한다.
+		 * 두 메서드 모두 첫 번째 인수로 시작값을 두 번째 인수로 종료값을 갖는다.
+		 * 다만 range 메서드는 종료값이 결과에 포함되지 않는다.
+		 */
+		System.out.println("5.6.2 숫자 범위 - range(0 ~ 10)");
+		IntStream.range(0, 10).forEach(System.out::println);
+		
+		System.out.println("5.6.2 숫자 범위 - rangeClosed(0 ~ 10)");
+		IntStream.rangeClosed(0, 10).forEach(System.out::println);
+		
+		/*
+		 * 5.6.3 숫자 스트림 활용 : 피타고라스 수
 		 */
 		Stream<int[]> pythagoreanTriples = IntStream.rangeClosed(1, 100)
 			.boxed()
