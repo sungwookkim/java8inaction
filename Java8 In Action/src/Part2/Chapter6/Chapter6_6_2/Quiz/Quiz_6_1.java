@@ -28,7 +28,6 @@ public class Quiz_6_1 {
 		 */
 		String shortMenu = menu.stream().map(Dish::getName).collect(Collectors.joining());
 		System.out.println(shortMenu);
-
 		
 		/*
 		 * 1
