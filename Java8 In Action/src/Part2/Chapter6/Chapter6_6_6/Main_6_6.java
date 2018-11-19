@@ -97,7 +97,7 @@ class PrimeNumbersCollector implements Collector<Integer, Map<Boolean, List<Inte
 		/*
 		 * 참고로 알고리즘 자체가 순차적이어서 컬렉터를 실제 병렬로 사용할 순 없다.
 		 * 따라서 combiner 메서드는 호출될 일이 없으므로 빈 구현으로 남겨두거나 UnsupportedOperationException을 던지도록 구현한다.
-		 * 실제로 이 메서드는 사용할 일이 없지면 학습을 목적으로 구현한 것이다.
+		 * 실제로 이 메서드는 사용할 일이 없지만 학습을 목적으로 구현한 것이다.
 		 */
 		return (Map<Boolean, List<Integer>> map1, Map<Boolean, List<Integer>> map2) -> {
 			map1.get(true).addAll(map2.get(true));
@@ -173,7 +173,7 @@ public class Main_6_6 {
 		/*
 		 * collect 메서드의 오버로드를 이용해서 핵심 로직을 구현하는 세 함수를 전달해서 같은 결과를 얻을 수 있다.
 		 * 코드는 간결하지만 재사용성은 떨어진다.
-		 */
+		 */		
 		return IntStream.rangeClosed(2, n).boxed()
 			.collect(
 				() -> new HashMap<Boolean, List<Integer>>() {

@@ -60,7 +60,7 @@ public class Main_6_4 {
 		 */
 		System.out.println("6.4.1 분할의 장점 : " + menu.stream()
 			.collect(Collectors.partitioningBy(Dish::isVegetarian
-				, Collectors.groupingBy(Dish::getType)) ));
+				, Collectors.groupingBy(Dish::getType)) ));		
 		
 		/*
 		 * 채식 요리와 채식이 아닌 요리 각각 그룹에서 칼로리가 높은 요리.
