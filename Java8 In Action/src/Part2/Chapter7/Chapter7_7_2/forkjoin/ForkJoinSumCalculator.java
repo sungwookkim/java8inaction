@@ -37,15 +37,15 @@ public class ForkJoinSumCalculator extends RecursiveTask<Long> {
 	protected Long compute() {
 		// 이 태스크에서 더할 배열의 길이
 		int length = this.end - this.start;
-		
+
 		// 기준값과 같거나 작으면 순차적으로 결과를 계산한다.
 		if(length <= THRESHOLD) {
 			return this.computeSequentially(); 
-		}
+		}		
 		
 		// 배열의 첫 번째 절반을 더하도록 서브태스크를 생성한다.
 		ForkJoinSumCalculator leftTask = new ForkJoinSumCalculator(this.numbers, this.start, this.start + length / 2);
-		// FokJoinPool의 다른 스레드로 새로 생성한 태스크를 비동기로 실행한다.
+		// FokJoinPool의 다른 스레드로 새로 생성한 태스크를 비동기로 실행한다.		
 		leftTask.fork();
 		
 		// 배열의 나머지 절반을 더하도록 서브태스크를 생성한다.
@@ -58,7 +58,7 @@ public class ForkJoinSumCalculator extends RecursiveTask<Long> {
 		// 두 서브태스크의 결과를 조합한 값이 이 태스크의 결과다.
 		return leftResult + rightResult;
 	}
- 
+
 	// 더 분할할 수 없을 때 서브 태스크의 결과를 계산하는 단순 알고리즘
 	private long computeSequentially() {
 		long sum = 0;
